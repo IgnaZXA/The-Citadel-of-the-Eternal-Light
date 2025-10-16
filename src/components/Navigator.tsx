@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Location from "./pages/LocationComponents/Location";
 import Defenses from "./pages/Defenses";
 import Inhabitants from "./pages/Inhabitants";
-import Resources from "./pages/Resources";
+import Resources from "./pages/ResourcesComponents/Resources";
 import History from "./pages/History";
 import { useEffect } from "react";
 import { Landmark } from "../helpers/interfaces/citadelJSON";
@@ -46,7 +46,7 @@ function Navigator({ citadelJSON }: any) { // TODO: change interface from any to
                     <Route path="/" element={<Location title={citadelJSON.name} continent={citadelJSON.location.continent} coordinates={citadelJSON.location.coordinates} landamarks={getOrderedLandmarks()} />} />
                     <Route path="/Defenses" element={<Defenses />} />
                     <Route path="/Inhabitants" element={<Inhabitants />} />
-                    <Route path="/Resources" element={<Resources />} />
+                    <Route path="/Resources" element={<Resources storage={citadelJSON.resources.storage} armory= {citadelJSON.resources.armory}/>} />
                     <Route path="/History" element={<History />} />
                 </Routes>
             </div>
