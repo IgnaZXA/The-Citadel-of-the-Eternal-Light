@@ -1,5 +1,5 @@
 export type InhabitantsProps = {
-    roles: (Mage | Soldier | Villager)[];
+    roles: (any)[];
 }
 
 // TODO  role y count se repiten en todos --> clase padre 

@@ -11,7 +11,6 @@ import { Landmark } from "../helpers/interfaces/citadelJSON";
 function Navigator({ citadelJSON }: any) { // TODO: change interface from any to citadelJSON interface
 
     useEffect(() => {
-        console.log("THE ARMORY ")
         console.log(citadelJSON.resources.armory);
         // console.log(citadelJSON.location.nearbyLandmarks);
     }, []);
@@ -29,6 +28,8 @@ function Navigator({ citadelJSON }: any) { // TODO: change interface from any to
         }  
         return landmarks;
     };
+
+    console.log(citadelJSON.inhabitants.roles)
 
     return (
         <>
