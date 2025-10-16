@@ -4,14 +4,17 @@ import Defenses from "./pages/Defenses";
 import Inhabitants from "./pages/Inhabitants";
 import Resources from "./pages/Resources";
 import History from "./pages/History";
+import { useEffect } from "react";
 
 
-function Navigator() {
+function Navigator({ citadelJSON }: any) {
 
+    useEffect(() => {
+        console.log(citadelJSON);
+    }, []);
 
     return (
         <>
-
             <div>
                 <Link to="/">Location</Link> | {" "}
                 <Link to="/Defenses">Defenses</Link> | {" "}
@@ -21,7 +24,7 @@ function Navigator() {
             </div>
             <div>
                 <Routes>
-                    <Route path="/" element={<Location />} />
+                    <Route path="/" element={<Location title={citadelJSON} continent={""} coordinates={{ latitude: 2, longitude: 2 }} landamarks={[]} />} />
                     <Route path="/Defenses" element={<Defenses />} />
                     <Route path="/Inhabitants" element={<Inhabitants />} />
                     <Route path="/Resources" element={<Resources />} />

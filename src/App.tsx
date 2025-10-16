@@ -5,19 +5,25 @@ function App() {
   const [citadelData, setCitadelData] = useState(null);
 
   // --- fetch data from ./public/citadel.json ---
-  const getCitadelData = ( () => {
-    const response = fetch("citadel.json"); 
-    response.then((data) => {data.json().then(
-      (result) => {setCitadelData(result)}
-    )});
+  const getCitadelData = (async () => {
+
+    const response = await fetch("citadel.json");
+    const data = await response.json();
+    setCitadelData(data);
   });
 
-  useEffect(() => getCitadelData(), []);
+  useEffect(() => {
+    getCitadelData();
+  }, []);
+
+
+  if (!citadelData) return <div>Loading...</div>
 
   return (
     <div>
+      <p>{JSON.stringify(citadelData)}</p>
       {/* --- Generate Navigator tabs --- */}
-      <Navigator />
+      <Navigator citadelJSON={citadelData} />
     </div>
   )
 }
