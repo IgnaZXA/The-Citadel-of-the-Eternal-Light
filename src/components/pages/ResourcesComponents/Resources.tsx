@@ -1,5 +1,3 @@
-import React from 'react'
-import StorageCard from './StorageCard';
 import ArmoryCard from './ArmoryCard';
 import { ResourcesProps } from '../../../helpers/interfaces/screensInterfaces/ResourcesInterfaces';
 import WaterStorage from './WaterStorage';
