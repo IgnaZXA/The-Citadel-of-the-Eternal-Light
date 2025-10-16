@@ -21,7 +21,6 @@ function App() {
 
   return (
     <div>
-      <p>{JSON.stringify(citadelData)}</p>
       {/* --- Generate Navigator tabs --- */}
       <Navigator citadelJSON={citadelData} />
     </div>

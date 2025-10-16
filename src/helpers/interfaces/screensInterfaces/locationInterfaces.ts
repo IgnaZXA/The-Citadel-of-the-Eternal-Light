@@ -1,15 +1,7 @@
+import { Landmark, LocationCoordinates } from "../citadelJSON";
 
 
-type LocationCoordinates = {
-    latitude: number; 
-    longitude: number; 
-};
 
-type Landmark = {
-    name: string;
-    type: string;
-    distance: number;
-};
 
 
 export type LocationProps = {
