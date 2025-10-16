@@ -1,27 +1,30 @@
 import { ArmoryItem } from "../../../helpers/interfaces/screensInterfaces/ResourcesInterfaces";
-import ShieldComponent from "./ShieldComponent";
-import WeaponComponent from "./WeaponComponent";
+import ArmoryItemComponent from "./ArmoryItemComponent";
+
 
 
 
 function ArmoryCard({weapons, shields}: any){
 
+    const armoryItems = [weapons, shields];
+    const armoryItemsTittle = ["Weapons", "Shields"];
+
     return (
         <>
-        {/* TODO: Se puede hacer un componente de Weapons y Shields */}
-            <div>
-                <h2>Weapons</h2>
-                {weapons.map((weapon: ArmoryItem, index: number) => {
-                    return(<WeaponComponent />);
-                })}
-            </div>
+        {(armoryItems).map((armoryItems: ArmoryItem[], index: number) => {
+            return (
+                <>
+                    <h1>{armoryItemsTittle[index]}</h1>
+                    {
+                        armoryItems.map((armoryItem: ArmoryItem, index: number) => {
+                            return(<ArmoryItemComponent key={index} type={armoryItem.type} quantity={armoryItem.quantity}/>);
+                        })
+                    }
+                </>
+            );
 
-            <div>
-                <h2>Shields</h2>
-                {shields.map((shield: ArmoryItem, index: number) => {
-                    return (<ShieldComponent key= {index} type={shield.type} quantity={shield.quantity} />);
-                })}
-            </div>
+        })}
+
         </>
     );
 }

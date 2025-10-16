@@ -2,7 +2,7 @@ import { ArmoryItem } from "../../../helpers/interfaces/screensInterfaces/Resour
 
 
 
-function ShieldComponent({type, quantity}: ArmoryItem ){
+function ArmoryItemComponent({type, quantity}: ArmoryItem ){
 
     return(
         <>
@@ -12,4 +12,4 @@ function ShieldComponent({type, quantity}: ArmoryItem ){
 
 }
 
-export default ShieldComponent;
+export default ArmoryItemComponent;
