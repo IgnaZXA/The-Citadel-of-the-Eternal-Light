@@ -1,7 +1,10 @@
 import React from 'react'
 import StorageCard from './StorageCard';
+import ArmoryCard from './ArmoryCard';
+import { ResourcesProps } from '../../../helpers/interfaces/screensInterfaces/ResourcesInterfaces';
 
-export default function Resources({ storage, armory }: any) {
+export default function Resources({ storage, armory }: ResourcesProps) {
+
   return (
     <>
       <h1>Resources</h1>
@@ -14,7 +17,11 @@ export default function Resources({ storage, armory }: any) {
         <h3>Water</h3>
       </div>
 
-      <h2>Armory</h2>
+      <div>
+        <h2>Armory</h2>
+        <ArmoryCard weapons={armory.weapons} shields={armory.shields}/>
+      </div>
+
 
     </>
   );
